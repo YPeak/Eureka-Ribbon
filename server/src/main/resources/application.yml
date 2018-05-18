@@ -1,0 +1,15 @@
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true #显示主机IP
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defalutZone:
+        http://${eureka.instance.hostname}:${server.port}/eureka/
+  server: #本地开发时 触发自我保护机制--注册中心维护的实例不是很准确  所有在本地开发时关闭保护机制
+    enable-self-preservation: false
