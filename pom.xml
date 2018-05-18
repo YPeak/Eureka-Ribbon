@@ -14,6 +14,7 @@
 		<module>client</module>
 		<module>server</module>
 		<module>order</module>
+		<module>hystrix</module>
 	</modules>
 
 	<name>eurekaribbon</name>
