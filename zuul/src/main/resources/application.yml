@@ -18,3 +18,4 @@ zuul:
       path: /dang/**
       serviceId: orderName   # http访问‘dang’会转到‘orderName’服务中    如果zuul的唯一标识和serviceId一样 可以不配置serviceId
                               # serviceId he service-id  的写法都行
+                              # 不会进行负载均衡
