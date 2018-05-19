@@ -1,0 +1,20 @@
+server:
+  port: 8050
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+spring:
+  application:
+    name: zuul
+#zuul:
+#  routes:
+#    orderName: /dang/**   #http访问‘dang’会转到‘orderName’服务中
+zuul:
+  routes:
+    orderName-service: # zuul的唯一标识
+      path: /dang/**
+      serviceId: orderName   # http访问‘dang’会转到‘orderName’服务中    如果zuul的唯一标识和serviceId一样 可以不配置serviceId
+                              # serviceId he service-id  的写法都行
